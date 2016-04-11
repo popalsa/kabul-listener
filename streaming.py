@@ -7,8 +7,6 @@ except ImportError:
 # Import the necessary methods from "twitter" library
 from twitter import Twitter, OAuth, TwitterHTTPError, TwitterStream
 
-keywords = ['Google']
-
 # Variables that contains the user credentials to access Twitter API 
 ACCESS_TOKEN = '302168391-glkmuC0G5gTvc23s91qP1a3pFda0diLvpRKflR4f'
 ACCESS_SECRET = 'Dj2Q4sI8hfK3bMJtvA7J4j6hZ4yO3O8hCcyHRletriSGi'
@@ -21,7 +19,7 @@ oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 twitter_stream = TwitterStream(auth=oauth)
 
 # Get a sample of the public data following through Twitter
-iterator = twitter_stream.statuses.filter(track=keywords)
+iterator = twitter_stream.statuses.filter(track='google')
 
 # Print each tweet in the stream to the screen 
 # Here we set it to stop after getting 1000 tweets. 
@@ -36,7 +34,8 @@ for tweet in iterator:
     print json.dumps(tweet)  
     
     # The command below will do pretty printing for JSON data, try it out
-    # print json.dumps(tweet, indent=4)
+    print json.dumps(tweet, indent=4)
        
     if tweet_count <= 0:
         break 
+
