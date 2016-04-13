@@ -1,14 +1,10 @@
 
-Setup python
+Download library from the following link https://pypi.python.org/pypi/twitter
+
+Setup python library
 `python setup.py --help`
 `python setup.py build` 
 `python setup.py install`
 
-
-
-
-
-`python streaming.py > stream>JSON`  loads tweets into a JSON
-
-`python converter.py` sends the user name and tweet to a JSON
+`python writer.py`  Looks for tweets within the keywords and prints them into a tweet_file.JSON
 
